@@ -1,0 +1,368 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../../public/fonts/HelveticaNeue.ttc');
+}
+@font-face {
+    font-family: 'ninoMtavr';
+    src: url('../../public/fonts/mtavru.ttf');
+}
+@font-face {
+    font-family: 'ninoMtavrBold';
+    src: url('../../public/fonts/mtavruBold.ttf');
+}
+
+.infoPage {
+    width: 100%;
+    height: 1080px;
+    display: flex;
+}
+
+/* info page - name & surname */
+
+.infoParent {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #F9F9F9; */
+    background-color: #9a3535;
+    padding: 15px;
+    flex-direction: column;
+}
+
+.pageInfo {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    /* align-items: center; */
+    color: #1A1A1A;
+    flex-wrap: wrap;
+    padding: 0 0 0 40px;
+}
+
+.headerParent {
+    display: flex;
+    width: 100%;
+    height: 130px;
+}
+
+.resetParent {
+    position: relative;
+}
+
+.backReset {
+    cursor: pointer; 
+    position: absolute;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    right: -7px;
+    top: 13px;
+}
+
+.header {
+    display: flex;
+    width: 76%;
+    height: 50px;
+    padding-top: 25px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1A1A1A;
+}
+
+.pageName {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'ninoMtavr';
+}
+
+.infoSpan {
+    font-size: 20px;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.infoInputParent {
+    flex-basis: 85%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    height: 100px;
+    gap: 110px;
+}
+
+.nameInput {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.nameInputLabel, .sureNameInputLabel {
+    padding-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'HelveticaNeue';
+}
+
+.nameInputSpan, .sureNameInputSpan {
+    padding-top: 8px;
+    font-size: 14px;
+}
+
+.sureNameInput {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* info page - photo upload & about me */
+
+.photoMailNum {
+    width: 85%;
+    text-align: left;
+}
+
+.photoSpan {
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 20px;
+}
+
+#fileInput {
+    display: none;
+}
+
+#fileLabel {
+    border: 1px solid #ccc;
+    width: 107px;
+    height: 27px;
+    cursor: pointer;
+    background-color: #0E80BF;
+    color: #FFFFFF;
+    font-size: 14px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutMe {
+    width: 100%;
+    padding-top: 55px;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutMeLabel {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.aboutMeText {
+    border: 1px solid #BCBCBC;
+    height: 103px;
+    padding: 0 0 0 5px;
+    outline: none;
+    border-radius: 4px;
+}
+
+.mailParent {
+    display: flex;
+    flex-direction: column;
+    padding-top: 55px;
+    flex: 1;
+}
+
+.mailLabel {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.mailSpan {
+    font-size: 14px;
+    font-weight: 100;
+    color: #2E2E2E;
+    padding-top: 5px;
+}
+
+.mobileNumber {
+    display: flex;
+    flex-direction: column;
+    padding-top: 55px;
+}
+
+.mobileLabel {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.mobileSpan {
+    font-size: 14px;
+    font-weight: 100;
+    color: #2E2E2E;
+    padding-top: 5px;
+}
+
+.btnParent {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    height: 50px;
+}
+
+.nextPageBtn {
+    color: #FFFFFF;
+    width: 151px;
+    height: 48px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #6B40E3;
+    border: none;
+    margin-top: 40px;
+}
+
+.pervPageBtn {
+    color: #FFFFFF;
+    width: 115px;
+    height: 48px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #6B40E3;
+    border: none;
+    margin-top: 40px;
+    visibility: hidden;
+}
+
+
+/* info page - part || - total information */
+
+.infoChild {
+    width: 40%;
+}
+
+.totalInformation {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.widthControl {
+    display: flex;
+    width: 80%;
+    
+}
+
+.liveInfo {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    flex-basis: 83%;
+    border-bottom: 1px solid #C8C8C8;
+}
+
+.liveInfoHeading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.liveImageParent {
+    width: 47%;
+    border-bottom: 1px solid #C8C8C8;
+}
+.liveAboutParent {
+    border-bottom: 1px solid #C8C8C8;
+}
+
+.liveImgFig {
+    width: 83%;
+    border-radius: 50%;
+    position: relative;
+}
+.liveImage {
+    width: 246px;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.nameSurname {
+  color: #F93B1D;
+  font-size: 32px;
+  font-family: 'ninoMtavrBold';
+  font-weight: bolder;
+  height: 20px;
+}
+
+.liveMail {
+    color: #1A1A1A;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'HelveticaNeue';
+}
+
+.liveNumber {
+    color: #1A1A1A;
+    font-size: 16px;
+    padding-top: 5px;
+    font-family: 'HelveticaNeue';
+}
+
+.liveAboutHeading {
+    color: #F93B1D;
+    font-size: 18px;
+    font-family: 'ninoMtavrBold';
+    font-weight: bolder;
+}
+
+.liveAboutParent, .educationParent {
+    width: 100%;
+}
+
+.liveAbout {
+    color: #000000;
+    font-family: "HelveticaNeue";
+    text-align: left;
+    word-wrap: break-word;
+    width: 100%;
+    font-size: 14px;
+}
+
+.orangeSymbol {
+    position: relative;
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.orangeSymbol img {
+    width: 42px;
+    position: absolute;
+    top: 320px;
+}
+
+.jobDiscription {
+    font-size: 15px;
+    font-family: "HelveticaNeue";
+}
+
+.dateAndTime {
+  color: #909090;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.dateAndJobFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
