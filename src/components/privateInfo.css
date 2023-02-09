@@ -26,7 +26,7 @@
     justify-content: center;
     align-items: center;
     /* background-color: #F9F9F9; */
-    background-color: #9a3535;
+    background-color: #e7dddd;
     padding: 15px;
     flex-direction: column;
 }
@@ -41,18 +41,27 @@
     flex-wrap: wrap;
     padding: 0 0 0 40px;
 }
-
+.pageInfoTwo {
+    display: block;
+    width: 90%;
+    height: 100%;
+    text-align: left;
+    /* align-items: center; */
+    color: #1A1A1A;
+    flex-wrap: wrap;
+    padding: 0 0 0 40px;
+    overflow: auto;
+}
 .headerParent {
     display: flex;
     width: 100%;
-    height: 130px;
+    /* height: 130px; */
 }
-
 .resetParent {
     position: relative;
 }
-
 .backReset {
+   
     cursor: pointer; 
     position: absolute;
     padding: 10px;
@@ -64,7 +73,7 @@
 
 .header {
     display: flex;
-    width: 76%;
+    width: 80%;
     height: 50px;
     padding-top: 25px;
     text-align: center;
@@ -86,7 +95,7 @@
 }
 
 .infoInputParent {
-    flex-basis: 85%;
+    flex-basis: 89%;
     display: flex;
     justify-content: space-between;
     text-align: left;
@@ -121,7 +130,7 @@
 /* info page - photo upload & about me */
 
 .photoMailNum {
-    width: 85%;
+    width: 100%;
     text-align: left;
 }
 
@@ -150,10 +159,11 @@
 }
 
 .aboutMe {
-    width: 100%;
-    padding-top: 55px;
+    width: 89%;
+    padding: 55px 0 50px 0;
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid #C1C1C1;
 }
 
 .aboutMeLabel {
@@ -169,8 +179,17 @@
     outline: none;
     border-radius: 4px;
 }
+.workplaceInfo {
+    height: 123px;
+    padding: 0 0 0 5px;
+    outline: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #BCBCBC;
+}
 
 .mailParent {
+    width: 89%;
     display: flex;
     flex-direction: column;
     padding-top: 55px;
@@ -212,8 +231,14 @@
 .btnParent {
     display: flex;
     justify-content: space-between;
-    width: 85%;
+    width: 89%;
     height: 50px;
+}
+.btnParentTwo {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0px 60px 0 0
 }
 
 .nextPageBtn {
@@ -236,7 +261,6 @@
     background-color: #6B40E3;
     border: none;
     margin-top: 40px;
-    visibility: hidden;
 }
 
 
@@ -286,12 +310,13 @@
     border-radius: 50%;
     position: relative;
 }
+
 .liveImage {
     width: 246px;
     position: absolute;
     border-radius: 50%;
     overflow: hidden;
-    padding-top: 20px;
+    right: -20px;
 }
 
 .nameSurname {
@@ -321,6 +346,7 @@
     font-size: 18px;
     font-family: 'ninoMtavrBold';
     font-weight: bolder;
+    margin: 20px 0 0 0;
 }
 
 .liveAboutParent, .educationParent {
@@ -347,7 +373,7 @@
 .orangeSymbol img {
     width: 42px;
     position: absolute;
-    top: 320px;
+    top: 390px;
 }
 
 .jobDiscription {
@@ -365,4 +391,39 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+
+/* page 3 - experience */
+
+.parentDiv {
+    width: 90%;
+    height: 100%;
+    text-align: left;
+    color: #1A1A1A;
+    padding: 0 0 0 40px;
+}
+.addExpBtnParent {
+    margin: 50px 0 0 0;
+}
+.addInfoButton {
+    width: 289px;
+    height: 50px;
+    background-color: #62A1EB;
+    color: #FFFFFF;
+    font-family: 'HelveticaNeue';
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.dateFlexDiv {
+    display: flex;
+    width: 89%;
+    gap: 56px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
 }

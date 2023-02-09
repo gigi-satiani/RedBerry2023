@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 export const GlobalInput = (props) => {
     return (
-      <div className='mailParent'  >
+      <div className='mailParent'>
         <label className='mailLabel'>{props.label}</label>
-         <StyledInput placeholder={props.placeholder} type={props.type} style={props.style} />
-       <span className='mailSpan'>{props.span}</span>
+        <StyledInput placeholder={props.placeholder} type={props.type} 
+         style={props.style} className={props.className} />
+        <span className='mailSpan'>{props.span}</span>
      </div>
     )
 }
@@ -17,4 +18,5 @@ const StyledInput = styled.input `
    border-radius: 4px;
    outline: none;
    padding: 15px 0 15px 10px;
+   font-size: 16px;
 `;
