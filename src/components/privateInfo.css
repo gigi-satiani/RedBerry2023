@@ -10,6 +10,10 @@
   font-family: "ninoMtavrBold";
   src: url("../../public/fonts/mtavruBold.ttf");
 }
+.error {
+  outline: 2px solid red !important;
+  border: none !important;
+}
 .main {
   width: 100%;
   height: 1080px;

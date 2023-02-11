@@ -3,6 +3,43 @@ import { GlobalInput } from "../globals/globalInput";
 import { GlobalText } from "../globals/globalTextArea";
 
 export const PrivateInformation = (props) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLasttName] = useState("");
+  const [email, setEmail] = useState("");
+  const [borderColor, setBorderColor] = useState("#bcbcbc");
+
+  // name & lastname input validations
+
+  let regex = /[^ა-ჰ]/gi;
+
+  const handleBlur = (event) => {
+    setFirstName(event.target.value);
+  };
+  const handleBlurr = (event) => {
+    setLasttName(event.target.value);
+  };
+
+  const isValidOne = firstName === "" || !regex.test(firstName);
+  const isValidTwo = lastName === "" || !regex.test(lastName);
+  // mail input validations
+
+  const handleMailBlur = (event) => {
+    const emailAddress = event.target.value;
+    console.log(event.target.value);
+    if (!validateEmail(emailAddress)) {
+      setBorderColor("red");
+    } else {
+      setBorderColor("");
+    }
+  };
+
+  const validateEmail = (email) => {
+    if (email.endsWith("@redberry.ge")) {
+      return false;
+    }
+    return true;
+  };
+
   return (
     <div className="mainPage">
       <div className="infoParent">
@@ -11,11 +48,17 @@ export const PrivateInformation = (props) => {
             placeholder="გიგი"
             label="სახელი"
             span="მინიმუმ 2 ასო, ქართული ასოები"
+            onKeyUp={handleBlur}
+            firstName={props.firstName}
+            style={{ borderColor: isValidOne ? "" : "red" }}
           />
           <GlobalInput
             placeholder="ასათიანი"
             label="გვარი"
             span="მინიმუმ 2 ასო, ქართული ასოები"
+            lastName={props.lastName}
+            onBlur={handleBlurr}
+            style={{ borderColor: isValidTwo ? "" : "red" }}
           />
         </div>
 
@@ -45,6 +88,10 @@ export const PrivateInformation = (props) => {
             span="უნდა მთავრდებოდეს @redberry.ge-ით"
             color="blue"
             type="email"
+            style={{ borderColor: borderColor }}
+            value={email}
+            onBlur={handleMailBlur}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <GlobalInput

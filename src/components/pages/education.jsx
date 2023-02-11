@@ -1,13 +1,18 @@
 import "../privateInfo.css";
 import React, { useEffect, useState } from "react";
-import caret from "../../symbols/caret.png";
-import { TotalInfo } from "../globals/totalInfo";
-import { MyHeader } from "../globals/header";
 import { GlobalInput } from "../globals/globalInput";
 import { GlobalText } from "../globals/globalTextArea";
 
 export const Education = (props) => {
   const [degrees, setDegrees] = useState([]);
+  const [firstName, setFirstName] = useState("");
+
+  const regex = /^[a-zA-Z0-9-^ა-ჰ]{2,}$/;
+  const handleBlur = (event) => {
+    setFirstName(event.target.value);
+  };
+
+  const isValidOne = firstName === "" || regex.test(firstName);
 
   useEffect(() => {
     fetch("https://resume.redberryinternship.ge/api/degrees")
@@ -26,6 +31,9 @@ export const Education = (props) => {
             placeholder="სასწავლებელი"
             label="სასწავლებელი"
             span="მინიმუმ 2 სიმბოლო"
+            onKeyUp={handleBlur}
+            firstName={props.firstName}
+            style={{ borderColor: isValidOne ? "" : "red" }}
           />
 
           <div className="dateFlexDiv">
