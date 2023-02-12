@@ -12,7 +12,7 @@ export const GlobalInput = (props) => {
         className={props.className}
         value={props.value}
         onBlur={props.onBlur}
-        onKeyUp={props.onKeyUp}
+        onChange={props.onKeyUp}
       />
       <span className="mailSpan">{props.span}</span>
     </div>

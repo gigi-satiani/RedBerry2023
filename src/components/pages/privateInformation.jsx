@@ -10,7 +10,7 @@ export const PrivateInformation = (props) => {
 
   // name & lastname input validations
 
-  let regex = /[^ა-ჰ]/gi;
+  let regex = new RegExp(/^[ა-ჰ]{3,}$/g);
 
   const handleBlur = (event) => {
     setFirstName(event.target.value);
@@ -19,8 +19,8 @@ export const PrivateInformation = (props) => {
     setLasttName(event.target.value);
   };
 
-  const isValidOne = firstName === "" || !regex.test(firstName);
-  const isValidTwo = lastName === "" || !regex.test(lastName);
+  const isValidOne = firstName === "" || regex.test(firstName);
+  const isValidTwo = lastName === "" || regex.test(lastName);
   // mail input validations
 
   const handleMailBlur = (event) => {
@@ -35,9 +35,9 @@ export const PrivateInformation = (props) => {
 
   const validateEmail = (email) => {
     if (email.endsWith("@redberry.ge")) {
-      return false;
+      return true;
     }
-    return true;
+    return false;
   };
 
   return (
@@ -50,14 +50,21 @@ export const PrivateInformation = (props) => {
             span="მინიმუმ 2 ასო, ქართული ასოები"
             onKeyUp={handleBlur}
             firstName={props.firstName}
-            style={{ borderColor: isValidOne ? "" : "red" }}
+            style={{
+              outline:
+                isValidOne && firstName.length > 2
+                  ? "solid 1px green" // <img src="asdasda" />
+                  : isValidOne
+                  ? ""
+                  : "solid 1px red",
+            }}
           />
           <GlobalInput
             placeholder="ასათიანი"
             label="გვარი"
             span="მინიმუმ 2 ასო, ქართული ასოები"
             lastName={props.lastName}
-            onBlur={handleBlurr}
+            onKeyUp={handleBlurr}
             style={{ borderColor: isValidTwo ? "" : "red" }}
           />
         </div>
@@ -91,7 +98,7 @@ export const PrivateInformation = (props) => {
             style={{ borderColor: borderColor }}
             value={email}
             onBlur={handleMailBlur}
-            onChange={(e) => setEmail(e.target.value)}
+            onKeyUp={(e) => setEmail(e.target.value)}
           />
 
           <GlobalInput

@@ -1,14 +1,28 @@
 import "./App.css";
-import React from "react";
-import Home from "./components/home";
+import React, { useState } from "react";
+import Home from "./components/Home";
 import FormRegistration from "./components/formRegistration";
-import { Experience } from "./components/pages/experience.jsx";
-import { Education } from "./components/pages/education";
 
-function App() {
+function App(props) {
+  const [tab, setTab] = useState(0);
+
+  const handleNextPage = () => {
+    setTab((backTab) => {
+      return backTab === 0 ? backTab + 1 : backTab;
+    });
+  };
+
   return (
     <div className="App">
-      <FormRegistration />
+      {tab === 0 ? (
+        <Home
+          onClick={props.handleNextPage + 1}
+          handleNextPage={handleNextPage}
+          tab={tab}
+        />
+      ) : (
+        <FormRegistration />
+      )}
     </div>
   );
 }

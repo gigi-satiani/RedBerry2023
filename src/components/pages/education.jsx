@@ -19,7 +19,6 @@ export const Education = (props) => {
       .then((response) => response.json())
       .then((result) => {
         setDegrees(result);
-        console.log(result);
       });
   }, []);
 
@@ -27,38 +26,40 @@ export const Education = (props) => {
     <div className="mainEduPage">
       <div className="udecationParent">
         <div className="pageInfoTwo">
-          <GlobalInput
-            placeholder="სასწავლებელი"
-            label="სასწავლებელი"
-            span="მინიმუმ 2 სიმბოლო"
-            onKeyUp={handleBlur}
-            firstName={props.firstName}
-            style={{ borderColor: isValidOne ? "" : "red" }}
-          />
+          <div className="additionalEducation">
+            <GlobalInput
+              placeholder="სასწავლებელი"
+              label="სასწავლებელი"
+              span="მინიმუმ 2 სიმბოლო"
+              onKeyUp={handleBlur}
+              firstName={props.firstName}
+              style={{ borderColor: isValidOne ? "" : "red" }}
+            />
 
-          <div className="dateFlexDiv">
-            <div className="educationSelectParent">
-              <label className="mailLabel">ხარისხი</label>
-              <select id="select" className="degreeSelect">
-                <option value="" disabled selected>
-                  აირჩიეთ ხარისხი
-                </option>
-                {degrees &&
-                  degrees.map((degree) => (
-                    <option key={degree.id}>{degree.title}</option>
-                  ))}
-              </select>
+            <div className="dateFlexDiv">
+              <div className="educationSelectParent">
+                <label className="mailLabel">ხარისხი</label>
+                <select id="select" className="degreeSelect">
+                  <option value="" disabled selected>
+                    აირჩიეთ ხარისხი
+                  </option>
+                  {degrees &&
+                    degrees.map((degree) => (
+                      <option key={degree.id}>{degree.title}</option>
+                    ))}
+                </select>
+              </div>
+              <GlobalInput label="დამთავრების რიცხვი" type="date" />
             </div>
-            <GlobalInput label="დამთავრების რიცხვი" type="date" />
+            <GlobalText
+              label="აღწერა"
+              placeholder="განათლების აღწერა"
+              className="workplaceInfo"
+            />
           </div>
-          <GlobalText
-            label="აღწერა"
-            placeholder="განათლების აღწერა"
-            className="workplaceInfo"
-          />
 
           <div className="addExpBtnParent">
-            <button className="addInfoButton">
+            <button className="addInfoButton" type="button">
               სხვა სასწავლებლის დამატება
             </button>
           </div>
