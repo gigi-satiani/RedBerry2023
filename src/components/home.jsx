@@ -1,11 +1,10 @@
 import "./home.css";
-
 import LOGOberry from "../images/LOGOberry.png";
 import logo from "../images/LOGO.png";
 
 export function Home(props) {
   return (
-    <div className="Home">
+    <div className="home">
       <figure className="logoRedBerry">
         <img src={LOGOberry} style={{ paddingLeft: "20px" }} alt="" />
       </figure>
@@ -19,9 +18,6 @@ export function Home(props) {
         >
           ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ
         </button>
-        {/* <Link className="newProfileBtn" to="registration">
-          ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ
-        </Link> */}
         <figure className="midLogoParent">
           <img src={logo} className="midLogo" alt=""></img>
         </figure>
