@@ -35,7 +35,12 @@ export default function FormRegistration() {
       <div className="infoParentMain">
         <div className="headerParent">
           <figure className="resetParent">
-            <img src={caret} className="backReset" onClick={handleReset} />
+            <img
+              alt="s"
+              src={caret}
+              className="backReset"
+              onClick={handleReset}
+            />
           </figure>
           <MyHeader span={`${tab}/3`} h2={titleName[tab]} />
         </div>
