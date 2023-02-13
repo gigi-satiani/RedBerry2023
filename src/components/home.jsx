@@ -1,6 +1,6 @@
-import "./home.css";
 import LOGOberry from "../images/LOGOberry.png";
 import logo from "../images/LOGO.png";
+import "./home.css";
 
 export function Home(props) {
   return (

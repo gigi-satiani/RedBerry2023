@@ -1,7 +1,7 @@
-import "../privateInfo.css";
 import React, { useState } from "react";
 import { GlobalInput } from "../globals/globalInput";
 import { GlobalText } from "../globals/globalTextArea";
+import "../privateInfo.css";
 
 export const Experience = (props) => {
   const [firstName, setFirstName] = useState("");

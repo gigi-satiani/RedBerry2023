@@ -1,7 +1,7 @@
-import "../privateInfo.css";
 import React, { useEffect, useState } from "react";
 import { GlobalInput } from "../globals/globalInput";
 import { GlobalText } from "../globals/globalTextArea";
+import "../privateInfo.css";
 
 export const Education = (props) => {
   const [degrees, setDegrees] = useState([]);

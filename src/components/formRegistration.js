@@ -1,4 +1,3 @@
-import "./privateInfo.css";
 import caret from "../symbols/caret.png";
 import React, { useState } from "react";
 import { MyHeader } from "./globals/header";
@@ -6,6 +5,7 @@ import { TotalInfo } from "./globals/totalInfo";
 import { PrivateInformation } from "./pages/privateInformation";
 import { Experience } from "./pages/experience";
 import { Education } from "./pages/education";
+import "./privateInfo.css";
 
 const titleName = { 1: "პირადი ინფო", 2: "გამოცდილება", 3: "განათლება" };
 
