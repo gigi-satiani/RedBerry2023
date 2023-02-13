@@ -8,8 +8,6 @@ export const PrivateInformation = (props) => {
   const [email, setEmail] = useState("");
   const [borderColor, setBorderColor] = useState("#bcbcbc");
 
-  let regexThree = /^(\+?995)(79\d{7}|5\d{8})$/;
-
   // name & lastname input validations
   let regex = new RegExp(/^[ა-ჰ]{2,}$/g);
   let regexTwo = new RegExp(/^[ა-ჰ]{2,}$/g);

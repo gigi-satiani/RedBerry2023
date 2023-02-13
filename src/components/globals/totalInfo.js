@@ -13,10 +13,10 @@ export const TotalInfo = () => {
           <div className="liveInfoHeading">
             <h2 className="nameSurname">გიგი ასათიანი</h2>
             <span className="liveMail">
-              <img src={mail} /> 123madness@gmail.com
+              <img src={mail} alt="" /> 123madness@gmail.com
             </span>
             <span className="liveNumber">
-              <img src={phone} /> +995 598 88 68 00
+              <img src={phone} alt="" /> +995 598 88 68 00
             </span>
           </div>
           <TotalInfoPart
@@ -28,7 +28,7 @@ export const TotalInfo = () => {
 
         <div className="liveImageParent">
           <figure className="liveImgFig">
-            <img className="liveImage" src={dude} />
+            <img className="liveImage" src={dude} alt="" />
           </figure>
         </div>
       </div>
@@ -57,7 +57,7 @@ export const TotalInfo = () => {
       </div>
 
       <figure className="orangeSymbol">
-        <img src={symbolOrange} />
+        <img src={symbolOrange} alt="" />
       </figure>
     </div>
   );
