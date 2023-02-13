@@ -1,5 +1,4 @@
 import "./home.css";
-import { Link } from "react-router-dom";
 // img
 import LOGOberry from "../images/LOGOberry.png";
 import logo from "../images/LOGO.png";
