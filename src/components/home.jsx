@@ -7,7 +7,7 @@ export default function Home(props) {
   return (
     <div className="Home">
       <figure className="logoRedBerry">
-        <img src={LOGOberry} style={{ paddingLeft: "20px" }} />
+        <img src={LOGOberry} style={{ paddingLeft: "20px" }} alt="" />
       </figure>
       <hr style={{ width: "1770px" }} />
       <div className="profileBtnParent">
@@ -23,7 +23,7 @@ export default function Home(props) {
           ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ
         </Link> */}
         <figure className="midLogoParent">
-          <img src={logo} className="midLogo"></img>
+          <img src={logo} className="midLogo" alt=""></img>
         </figure>
       </div>
     </div>
