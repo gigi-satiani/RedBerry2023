@@ -36,7 +36,7 @@ export const Education = (props) => {
               style={{
                 outline:
                   isValidOne && firstName.length >= 2
-                    ? "solid 1px #98E37E" // <img src="asdasda" />
+                    ? "solid 1px #98E37E"
                     : isValidOne
                     ? ""
                     : "solid 1px #EF5050",

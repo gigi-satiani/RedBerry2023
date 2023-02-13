@@ -36,7 +36,7 @@ export default function FormRegistration() {
         <div className="headerParent">
           <figure className="resetParent">
             <img
-              alt="s"
+              alt=""
               src={caret}
               className="backReset"
               onClick={handleReset}
