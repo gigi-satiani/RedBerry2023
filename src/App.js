@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-// import { Home } from "./components/Home";
 import FormRegistration from "./components/formRegistration";
-import { Home } from "./components/Home";
 import "./App.css";
 
 function App(props) {
@@ -15,15 +13,7 @@ function App(props) {
 
   return (
     <div className="App">
-      {tab === 0 ? (
-        <Home
-          onClick={props.handleNextPage + 1}
-          handleNextPage={handleNextPage}
-          tab={tab}
-        />
-      ) : (
-        <FormRegistration />
-      )}
+      <FormRegistration />
     </div>
   );
 }
