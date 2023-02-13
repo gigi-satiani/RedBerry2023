@@ -3,21 +3,9 @@ import React, { useState } from "react";
 import { GlobalInput } from "../globals/globalInput";
 import { GlobalText } from "../globals/globalTextArea";
 
-const experienceDefaultState = {
-  position: "",
-  employer: "",
-  startDate: new Date(),
-  endDate: new Date(),
-  experienceDescription: "",
-};
-
 export const Experience = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLasttName] = useState("");
-  const [registrationForm, setRegistrationForm] = useState({
-    personalInfo: {},
-    experienceInfo: [experienceDefaultState],
-  });
 
   let regex = /^[a-zA-Z0-9-^ა-ჰ]{2,}$/;
 
@@ -31,34 +19,6 @@ export const Experience = (props) => {
   const isValidOne = firstName === "" || regex.test(firstName);
   const isValidTwo = lastName === "" || regex.test(lastName);
 
-  // additional info inputs
-  const handleAddNewExperience = () => {
-    setRegistrationForm((previousForm) => {
-      return {
-        ...previousForm,
-        experienceInfo: [
-          ...previousForm.experienceInfo,
-          experienceDefaultState,
-        ],
-      };
-    });
-  };
-
-  const handlePersonalInfosChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    console.log(name);
-    setRegistrationForm((previousForm) => {
-      return {
-        ...previousForm,
-        personalInfo: {
-          ...previousForm.personalInfo,
-          [name]: value,
-        },
-      };
-    });
-  };
-
   return (
     <div className="mainPage">
       <div className="infoParent">
@@ -70,7 +30,14 @@ export const Experience = (props) => {
               span="მინიმუმ 2 სიმბოლო"
               onKeyUp={handleBlur}
               firstName={props.firstName}
-              style={{ borderColor: isValidOne ? "" : "red" }}
+              style={{
+                outline:
+                  isValidOne && firstName.length >= 2
+                    ? "solid 1px #98E37E" // <img src="asdasda" />
+                    : isValidOne
+                    ? ""
+                    : "solid 1px #EF5050",
+              }}
             />
             <GlobalInput
               placeholder="დამსაქმებელი"
@@ -78,7 +45,14 @@ export const Experience = (props) => {
               span="მინიმუმ 2 სიმბოლო"
               lastName={props.lastName}
               onKeyUp={handleBlurr}
-              style={{ borderColor: isValidTwo ? "" : "red" }}
+              style={{
+                outline:
+                  isValidTwo && lastName.length >= 2
+                    ? "solid 1px #98E37E"
+                    : isValidTwo
+                    ? ""
+                    : "solid 1px #EF5050",
+              }}
             />
             <div className="dateFlexDiv">
               <GlobalInput label="დაწყების რიცხვი" type="date" />
@@ -94,8 +68,8 @@ export const Experience = (props) => {
             <button
               type="button"
               className="addInfoButton"
-              onClick={handleAddNewExperience}
-              handlePersonalInfosChange={handlePersonalInfosChange}
+              // onClick={handleAddNewExperience}
+              // handlePersonalInfosChange={handlePersonalInfosChange}
             >
               მეტი გამოცდილების დამატება
             </button>

@@ -33,7 +33,14 @@ export const Education = (props) => {
               span="მინიმუმ 2 სიმბოლო"
               onKeyUp={handleBlur}
               firstName={props.firstName}
-              style={{ borderColor: isValidOne ? "" : "red" }}
+              style={{
+                outline:
+                  isValidOne && firstName.length >= 2
+                    ? "solid 1px #98E37E" // <img src="asdasda" />
+                    : isValidOne
+                    ? ""
+                    : "solid 1px #EF5050",
+              }}
             />
 
             <div className="dateFlexDiv">
