@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import Home from "./components/Home";
+import { Home } from "./components/Home";
 import FormRegistration from "./components/formRegistration";
 
 function App(props) {

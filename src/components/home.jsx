@@ -1,9 +1,9 @@
 import "./home.css";
-// img
+
 import LOGOberry from "../images/LOGOberry.png";
 import logo from "../images/LOGO.png";
 
-export default function Home(props) {
+export function Home(props) {
   return (
     <div className="Home">
       <figure className="logoRedBerry">
