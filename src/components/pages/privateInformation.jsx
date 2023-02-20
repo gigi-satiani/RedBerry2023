@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GlobalInput } from "../globals/globalInput";
-import { GlobalText } from "../globals/globalTextArea";
+import { GlobalTextArea } from "../globals/globalTextArea";
 
 export const PrivateInformation = (props) => {
   const [firstName, setFirstName] = useState("");
@@ -102,7 +102,7 @@ export const PrivateInformation = (props) => {
               ატვირთვა
             </label>
           </div>
-          <GlobalText
+          <GlobalTextArea
             label="ჩემ შესახებ (არასავალდებულო)"
             placeholder="ზოგადი ინფო შენ შესახებ"
             type="text"

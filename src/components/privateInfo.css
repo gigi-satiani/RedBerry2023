@@ -56,9 +56,12 @@
   flex-direction: column;
 }
 
-.additionalExperience,
+.additionalExperience {
+  overflow: hidden;
+  height: 730px;
+}
 .additionalEducation {
-  overflow: auto;
+  overflow: hidden;
 }
 
 .pageInfo {
@@ -69,6 +72,13 @@
   color: #1a1a1a;
   flex-wrap: wrap;
   padding: 0 0 0 40px;
+}
+.pageInfoTwoExp {
+  overflow: auto;
+}
+.pageInfoTwo {
+  overflow: auto;
+  height: 550px;
 }
 .headerParent {
   display: flex;
@@ -423,6 +433,12 @@
 }
 .addExpBtnParent {
   margin: 50px 0 0 0;
+  overflow: auto;
+  height: 730px;
+}
+.addEduBtnParent {
+  margin: 50px 0 0 0;
+  overflow: auto;
 }
 .addInfoButton {
   width: 289px;

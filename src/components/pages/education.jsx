@@ -1,75 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { GlobalInput } from "../globals/globalInput";
-import { GlobalText } from "../globals/globalTextArea";
+import React, { useState } from "react";
+import { AddEducation } from "../exp&eduComponents/addEducation";
 import "../privateInfo.css";
 
-export const Education = (props) => {
-  const [degrees, setDegrees] = useState([]);
-  const [firstName, setFirstName] = useState("");
+export const Education = () => {
+  const [addEdu, setAddEdu] = useState(0);
 
-  const regex = /^[a-zA-Z0-9-^ა-ჰ]{2,}$/;
-  const handleBlur = (event) => {
-    setFirstName(event.target.value);
-  };
-
-  const isValidOne = firstName === "" || regex.test(firstName);
-
-  useEffect(() => {
-    fetch("https://resume.redberryinternship.ge/api/degrees")
-      .then((response) => response.json())
-      .then((result) => {
-        setDegrees(result);
-      });
-  }, []);
-
+  function handleAddEdu() {
+    setAddEdu(addEdu + 1);
+  }
   return (
     <div className="mainEduPage">
       <div className="udecationParent">
         <div className="pageInfoTwo">
-          <div className="additionalEducation">
-            <GlobalInput
-              placeholder="სასწავლებელი"
-              label="სასწავლებელი"
-              span="მინიმუმ 2 სიმბოლო"
-              onKeyUp={handleBlur}
-              firstName={props.firstName}
-              style={{
-                outline:
-                  isValidOne && firstName.length >= 2
-                    ? "solid 1px #98E37E"
-                    : isValidOne
-                    ? ""
-                    : "solid 1px #EF5050",
-              }}
-            />
-
-            <div className="dateFlexDiv">
-              <div className="educationSelectParent">
-                <label className="mailLabel">ხარისხი</label>
-                <select id="select" className="degreeSelect">
-                  <option value="" disabled selected>
-                    აირჩიეთ ხარისხი
-                  </option>
-                  {degrees &&
-                    degrees.map((degree) => (
-                      <option key={degree.id}>{degree.title}</option>
-                    ))}
-                </select>
-              </div>
-              <GlobalInput label="დამთავრების რიცხვი" type="date" />
-            </div>
-            <GlobalText
-              label="აღწერა"
-              placeholder="განათლების აღწერა"
-              className="workplaceInfo"
-            />
-          </div>
-
-          <div className="addExpBtnParent">
-            <button className="addInfoButton" type="button">
-              სხვა სასწავლებლის დამატება
-            </button>
-          </div>
+          <AddEducation />
+          {[...Array(addEdu)].map((_, index) => (
+            <AddEducation key={index} />
+          ))}
+        </div>
+        <div className="addEduBtnParent">
+          <button
+            className="addInfoButton"
+            type="button"
+            onClick={handleAddEdu}
+          >
+            სხვა სასწავლებლის დამატება
+          </button>
         </div>
       </div>
     </div>

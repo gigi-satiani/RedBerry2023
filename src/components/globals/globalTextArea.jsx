@@ -1,7 +1,7 @@
 import React from "react";
 import "../privateInfo.css";
 
-export const GlobalText = (props) => {
+export const GlobalTextArea = (props) => {
   return (
     <div className="aboutMe">
       <label className="aboutMeLabel">{props.label}</label>
