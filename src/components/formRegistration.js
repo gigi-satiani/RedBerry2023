@@ -1,5 +1,6 @@
 import caret from "../symbols/caret.png";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { MyHeader } from "./globals/header";
 import { TotalInfo } from "./globals/totalInfo";
 import { PrivateInformation } from "./pages/privateInformation";
@@ -35,12 +36,14 @@ export default function FormRegistration() {
       <div className="infoParentMain">
         <div className="headerParent">
           <figure className="resetParent">
-            <img
-              alt=""
-              src={caret}
-              className="backReset"
-              onClick={handleReset}
-            />
+            <Link to="/">
+              <img
+                alt=""
+                src={caret}
+                className="backReset"
+                // onClick={handleReset}
+              />
+            </Link>
           </figure>
           <MyHeader span={`${tab}/3`} h2={titleName[tab]} />
         </div>
