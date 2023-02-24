@@ -1,19 +1,17 @@
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('../public/fonts/HelveticaNeue.ttc');
+  font-family: "HelveticaNeue";
+  src: url("../public/fonts/HelveticaNeue.ttc");
 }
 @font-face {
-    font-family: 'ninoMtavr';
-    src: url('../public/fonts/mtavru.ttf');
+  font-family: "ninoMtavr";
+  src: url("../public/fonts/mtavru.ttf");
 }
-#root {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'HelveticaNeue';
-    height: 100vh;
-    width: 100%;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "HelveticaNeue";
 }
 .App {
-    font-family: 'HelveticaNeue';
+  font-family: "HelveticaNeue";
 }

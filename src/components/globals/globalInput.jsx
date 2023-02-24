@@ -30,6 +30,7 @@ const StyledInput = styled.input`
   padding: 15px 0 15px 10px;
   font-size: 16px;
   position: relative;
+  font-family: "HelveticaNeue";
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;

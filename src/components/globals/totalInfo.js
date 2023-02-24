@@ -21,7 +21,7 @@ export const TotalInfo = () => {
           </div>
           <TotalInfoPart
             h4="ჩემს შესახებ"
-            p="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            p=" გიგი ასათიანი Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                sed do eiusmod tempor incididunt ut labore et dolore magna"
           />
         </div>
