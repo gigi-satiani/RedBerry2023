@@ -10,10 +10,12 @@
   font-family: "ninoMtavrBold";
   src: url("../../../public/fonts/mtavruBold.ttf");
 }
-.error {
-  outline: 2px solid red !important;
-  border: none !important;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 .main {
   width: 100%;
   height: 1080px;
@@ -25,7 +27,7 @@
   display: flex;
 }
 .mainEduPage {
-  width: 89%;
+  width: 95%;
   height: 100%;
   display: flex;
 }
@@ -49,7 +51,7 @@
   flex-direction: column;
 }
 .infoParent {
-  width: 89%;
+  width: 95%;
   height: 100%;
   display: flex;
   /* background-color: #F9F9F9; */
@@ -83,6 +85,7 @@
 .headerParent {
   display: flex;
   width: 100%;
+  justify-content: center;
 }
 .resetParent {
   position: relative;
@@ -93,13 +96,13 @@
   padding: 10px;
   border-radius: 50%;
   background-color: #ffffff;
-  right: 5px;
-  top: 13px;
+  right: 28px;
+  top: 17px;
 }
 
 .header {
   display: flex;
-  width: 80%;
+  width: 82%;
   height: 50px;
   padding-top: 25px;
   text-align: center;
@@ -322,9 +325,8 @@
 .liveInfo {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  padding-top: 50px;
   flex-basis: 83%;
-  /* border-bottom: 1px solid #C8C8C8; */
 }
 
 .liveInfoHeading {
@@ -332,6 +334,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 37px;
+  gap: 20px;
 }
 
 .liveImageParent {
@@ -340,6 +343,7 @@
 }
 .liveAboutParent {
   border-bottom: 1px solid #c8c8c8;
+  padding: 5px;
 }
 
 .liveImgFig {
@@ -350,6 +354,7 @@
 
 .liveImage {
   width: 246px;
+  height: 246px;
   position: absolute;
   border-radius: 50%;
   overflow: hidden;

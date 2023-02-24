@@ -6,10 +6,12 @@ import "../cssFiles/home.css";
 function HomePage() {
   return (
     <div className="home">
-      <figure className="logoRedBerry">
-        <img src={LOGOberry} style={{ paddingLeft: "20px" }} alt="" />
-      </figure>
-      <hr style={{ width: "1770px" }} />
+      <div className="logoBerryParent">
+        <figure className="logoRedBerry">
+          <img src={LOGOberry} style={{ paddingLeft: "20px" }} alt="" />
+        </figure>
+      </div>
+      <hr className="hrLine" />
       <div className="profileBtnParent">
         <Link className="newProfileBtn" to="formRegistration">
           ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ

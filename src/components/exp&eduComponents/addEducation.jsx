@@ -4,14 +4,20 @@ import { GlobalTextArea } from "../globals/globalTextArea";
 
 export const AddEducation = (props) => {
   const [degrees, setDegrees] = useState([]);
-  const [firstName, setFirstName] = useState("");
+  const [educationValue, setEducationValue] = useState("");
+  const [textValue, setTextValue] = useState("");
 
   const regex = /^[a-zA-Z0-9-^ა-ჰ]{2,}$/;
   const handleBlur = (event) => {
-    setFirstName(event.target.value);
+    setEducationValue(event.target.value);
+  };
+  const regexText = /^[a-zA-Z0-9-^ა-ჰ]{0,}$/;
+  const handleBlurer = (event) => {
+    setTextValue(event.target.value);
   };
 
-  const isValidOne = firstName === "" || regex.test(firstName);
+  const isValidOne = educationValue === "" || regex.test(educationValue);
+  const isValidTwo = textValue === "" || regexText.test(textValue);
 
   useEffect(() => {
     fetch("https://resume.redberryinternship.ge/api/degrees")
@@ -31,11 +37,11 @@ export const AddEducation = (props) => {
         firstName={props.firstName}
         style={{
           outline:
-            isValidOne && firstName.length >= 2
-              ? "solid 1px #98E37E"
+            isValidOne && educationValue.length >= 2
+              ? "solid 2px #98E37E"
               : isValidOne
               ? ""
-              : "solid 1px #EF5050",
+              : "solid 2px #EF5050",
         }}
       />
 
@@ -58,6 +64,16 @@ export const AddEducation = (props) => {
         label="აღწერა"
         placeholder="განათლების აღწერა"
         className="workplaceInfo"
+        onKeyUp={handleBlurer}
+        firstName={props.firstName}
+        style={{
+          outline:
+            isValidTwo && textValue.length >= 1
+              ? "solid 2px #98E37E"
+              : isValidTwo
+              ? ""
+              : "solid 2px #EF5050",
+        }}
       />
     </div>
   );

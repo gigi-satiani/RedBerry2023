@@ -9,8 +9,8 @@ export const GlobalInput = (props) => {
         <StyledInput
           placeholder={props.placeholder}
           type={props.type}
-          style={props.style}
           className={props.className}
+          style={props.style}
           value={props.value}
           onBlur={props.onBlur}
           onChange={props.onKeyUp}

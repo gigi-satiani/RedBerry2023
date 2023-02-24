@@ -5,6 +5,7 @@ import { GlobalTextArea } from "../globals/globalTextArea";
 export const AddExperience = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLasttName] = useState("");
+  const [textValue, setTextValue] = useState("");
 
   let regex = /^[a-zA-Z0-9-^ა-ჰ]{2,}$/;
 
@@ -18,6 +19,13 @@ export const AddExperience = (props) => {
   const isValidOne = firstName === "" || regex.test(firstName);
   const isValidTwo = lastName === "" || regex.test(lastName);
 
+  // text area regex
+  const regexText = /^[a-zA-Z0-9-^ა-ჰ]{0,}$/;
+  const handleBlurer = (event) => {
+    setTextValue(event.target.value);
+  };
+  const isValidThree = textValue === "" || regexText.test(textValue);
+
   return (
     <div className="additionalExperience">
       <GlobalInput
@@ -29,10 +37,10 @@ export const AddExperience = (props) => {
         style={{
           outline:
             isValidOne && firstName.length >= 2
-              ? "solid 1px #98E37E"
+              ? "solid 2px #98E37E"
               : isValidOne
               ? ""
-              : "solid 1px #EF5050",
+              : "solid 2px #EF5050",
         }}
       />
       <GlobalInput
@@ -44,10 +52,10 @@ export const AddExperience = (props) => {
         style={{
           outline:
             isValidTwo && lastName.length >= 2
-              ? "solid 1px #98E37E"
+              ? "solid 2px #98E37E"
               : isValidTwo
               ? ""
-              : "solid 1px #EF5050",
+              : "solid 2px #EF5050",
         }}
       />
       <div className="dateFlexDiv">
@@ -58,6 +66,16 @@ export const AddExperience = (props) => {
         label="აღწერა"
         placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
         className="workplaceInfo"
+        onKeyUp={handleBlurer}
+        firstName={props.firstName}
+        style={{
+          outline:
+            isValidThree && textValue.length >= 1
+              ? "solid 2px #98E37E"
+              : isValidThree
+              ? ""
+              : "solid 2px #EF5050",
+        }}
       />
     </div>
   );

@@ -7,8 +7,10 @@ export const PrivateInformation = (props) => {
   const [lastName, setLasttName] = useState("");
   const [email, setEmail] = useState("");
   const [borderColor, setBorderColor] = useState("#bcbcbc");
+  const [textValue, setTextValue] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
-  // name & lastname input validations
+  // name & lastname input validation
   let regex = new RegExp(/^[ა-ჰ]{2,}$/g);
   let regexTwo = new RegExp(/^[ა-ჰ]{2,}$/g);
 
@@ -20,9 +22,10 @@ export const PrivateInformation = (props) => {
   };
 
   const isValidOne = firstName === "" || regex.test(firstName);
+  console.log(regex.test(firstName), "firstname");
   const isValidTwo = lastName === "" || regexTwo.test(lastName);
 
-  // mail input validations
+  // mail input validation
   const handleMailBlur = (event) => {
     const emailAddress = event.target.value;
 
@@ -40,18 +43,21 @@ export const PrivateInformation = (props) => {
     return false;
   };
 
-  // phone input validations
-  const validateNumber = (e) => {
-    const numberValidator = e.target.value;
-
-    let regexThree = /^(\+?995)(79\d{7}|5\d{8})$/;
-
-    if (!numberValidator.match(regexThree)) {
-      setBorderColor("#EF5050");
-    } else {
-      setBorderColor("#98E37E");
-    }
+  // phone input validation
+  const regexPhoneNumber = /^(\+?995)(79\d{7}|5\d{8})$/;
+  const validateNumber = (event) => {
+    setPhoneNumber(event.target.value);
   };
+
+  const isValidNumber =
+    phoneNumber === "" || regexPhoneNumber.test(phoneNumber);
+
+  // text area validation
+  const regexText = /^[a-zA-Z0-9-^ა-ჰ]{0,}$/;
+  const handleBlurer = (event) => {
+    setTextValue(event.target.value);
+  };
+  const isValidThree = textValue === "" || regexText.test(textValue);
 
   return (
     <div className="mainPage">
@@ -66,25 +72,25 @@ export const PrivateInformation = (props) => {
             style={{
               outline:
                 isValidOne && firstName.length >= 2
-                  ? "solid 1px #98E37E"
+                  ? "solid 2px #98E37E"
                   : isValidOne
                   ? ""
-                  : "solid 1px #EF5050",
+                  : "solid 2px #EF5050",
             }}
           />
           <GlobalInput
             placeholder="ასათიანი"
             label="გვარი"
             span="მინიმუმ 2 ასო, ქართული ასოები"
-            lastName={props.lastName}
             onKeyUp={handleKeyUpTwo}
+            firstName={props.firstName}
             style={{
               outline:
                 isValidTwo && lastName.length >= 2
-                  ? "solid 1px #98E37E"
+                  ? "solid 2px #98E37E"
                   : isValidTwo
                   ? ""
-                  : "solid 1px #EF5050",
+                  : "solid 2px #EF5050",
             }}
           />
         </div>
@@ -107,6 +113,15 @@ export const PrivateInformation = (props) => {
             placeholder="ზოგადი ინფო შენ შესახებ"
             type="text"
             className="aboutMeText"
+            onKeyUp={handleBlurer}
+            style={{
+              outline:
+                isValidThree && textValue.length >= 1
+                  ? "solid 2px #98E37E"
+                  : isValidThree
+                  ? ""
+                  : "solid 2px #EF5050",
+            }}
           />
 
           <GlobalInput
@@ -127,7 +142,14 @@ export const PrivateInformation = (props) => {
             span="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
             color="blue"
             type="number"
-            onBlur={validateNumber}
+            onKeyUp={validateNumber}
+            style={{
+              outline: isValidNumber
+                ? "solid 2px #98E37E"
+                : isValidNumber
+                ? ""
+                : "solid 2px #EF5050",
+            }}
           />
         </div>
       </div>

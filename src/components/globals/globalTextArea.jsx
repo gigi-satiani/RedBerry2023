@@ -6,9 +6,13 @@ export const GlobalTextArea = (props) => {
     <div className="aboutMe">
       <label className="aboutMeLabel">{props.label}</label>
       <input
+        placeholder={props.placeholder}
         type={props.type}
         className={props.className}
-        placeholder={props.placeholder}
+        style={props.style}
+        value={props.value}
+        onBlur={props.onBlur}
+        onChange={props.onKeyUp}
       />
     </div>
   );
