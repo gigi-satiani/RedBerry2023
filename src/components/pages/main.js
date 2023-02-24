@@ -26,11 +26,6 @@ export default function FormRegistration() {
     });
   };
 
-  // reset page
-  const handleReset = () => {
-    window.location.reload();
-  };
-
   return (
     <div className="main">
       <div className="infoParentMain">
