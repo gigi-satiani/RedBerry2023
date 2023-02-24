@@ -1,14 +1,14 @@
 @font-face {
   font-family: "HelveticaNeue";
-  src: url("../../public/fonts/HelveticaNeue.ttc");
+  src: url("../../../public/fonts/HelveticaNeue.ttc");
 }
 @font-face {
   font-family: "ninoMtavr";
-  src: url("../../public/fonts/mtavru.ttf");
+  src: url("../../../public/fonts/mtavru.ttf");
 }
 @font-face {
   font-family: "ninoMtavrBold";
-  src: url("../../public/fonts/mtavruBold.ttf");
+  src: url("../../../public/fonts/mtavruBold.ttf");
 }
 .error {
   outline: 2px solid red !important;

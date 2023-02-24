@@ -1,12 +1,12 @@
-import caret from "../symbols/caret.png";
+import caret from "../../symbols/caret.png";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MyHeader } from "./globals/header";
-import { TotalInfo } from "./globals/totalInfo";
-import { PrivateInformation } from "./pages/privateInformation";
-import { Experience } from "./pages/experience";
-import { Education } from "./pages/education";
-import "./privateInfo.css";
+import { MyHeader } from "../globals/header";
+import { TotalInfo } from "../globals/totalInfo";
+import { PrivateInformation } from "./privateInformation";
+import { Experience } from "./experience";
+import { Education } from "./education";
+import "../cssFiles/main.css";
 
 const titleName = { 1: "პირადი ინფო", 2: "გამოცდილება", 3: "განათლება" };
 
@@ -37,12 +37,7 @@ export default function FormRegistration() {
         <div className="headerParent">
           <figure className="resetParent">
             <Link to="/">
-              <img
-                alt=""
-                src={caret}
-                className="backReset"
-                // onClick={handleReset}
-              />
+              <img alt="" src={caret} className="backReset" />
             </Link>
           </figure>
           <MyHeader span={`${tab}/3`} h2={titleName[tab]} />

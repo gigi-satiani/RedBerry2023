@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./components/Home";
-import FormRegistration from "./components/formRegistration";
+import HomePage from "./components/pages/Home.js";
+import FormRegistration from "./components/pages/main.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <HomePage />,
   },
   {
     path: "formRegistration",

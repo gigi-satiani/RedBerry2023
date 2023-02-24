@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AddEducation } from "../exp&eduComponents/addEducation";
-import "../privateInfo.css";
+import "../cssFiles/main.css";
 
 export const Education = () => {
   const [addEdu, setAddEdu] = useState(0);

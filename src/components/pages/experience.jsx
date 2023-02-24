@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { GlobalInput } from "../globals/globalInput";
 import { AddExperience } from "../exp&eduComponents/addExperience";
-import "../privateInfo.css";
+import "../cssFiles/main.css";
 
 export const Experience = () => {
   const [addInfo, setAddInfo] = useState(0);

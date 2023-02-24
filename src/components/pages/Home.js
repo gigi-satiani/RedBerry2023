@@ -1,9 +1,9 @@
-import LOGOberry from "../images/LOGOberry.png";
+import LOGOberry from "../../images/LOGOberry.png";
+import logo from "../../images/LOGO.png";
 import { Link } from "react-router-dom";
-import logo from "../images/LOGO.png";
-import "./home.css";
+import "../cssFiles/home.css";
 
-export function Home() {
+function HomePage() {
   return (
     <div className="home">
       <figure className="logoRedBerry">
@@ -21,3 +21,5 @@ export function Home() {
     </div>
   );
 }
+
+export default HomePage;

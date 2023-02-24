@@ -1,5 +1,5 @@
 import React from "react";
-import "../privateInfo.css";
+import "../cssFiles/main.css";
 
 export const GlobalTextArea = (props) => {
   return (
