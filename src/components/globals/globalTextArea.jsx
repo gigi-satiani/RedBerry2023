@@ -12,7 +12,7 @@ export const GlobalTextArea = (props) => {
         style={props.style}
         value={props.value}
         onBlur={props.onBlur}
-        onChange={props.onKeyUp}
+        onKeyUp={props.onKeyUp}
       />
     </div>
   );

@@ -48,13 +48,20 @@ export const AddEducation = (props) => {
       <div className="dateFlexDiv">
         <div className="educationSelectParent">
           <label className="mailLabel">ხარისხი</label>
-          <select id="select" className="degreeSelect">
-            <option value="" disabled selected>
+          <select
+            id="select"
+            className="degreeSelect"
+            defaultValue={"აირჩიეთ ხარისხი"}
+            style={{ color: "gray" }}
+          >
+            <option disabled hidden style={{ color: "gray" }}>
               აირჩიეთ ხარისხი
             </option>
             {degrees &&
               degrees.map((degree) => (
-                <option key={degree.id}>{degree.title}</option>
+                <option key={degree.id} style={{ color: "black" }}>
+                  {degree.title}
+                </option>
               ))}
           </select>
         </div>
@@ -70,9 +77,7 @@ export const AddEducation = (props) => {
           outline:
             isValidTwo && textValue.length >= 1
               ? "solid 2px #98E37E"
-              : isValidTwo
-              ? ""
-              : "solid 2px #EF5050",
+              : isValidTwo,
         }}
       />
     </div>

@@ -72,9 +72,7 @@ export const AddExperience = (props) => {
           outline:
             isValidThree && textValue.length >= 1
               ? "solid 2px #98E37E"
-              : isValidThree
-              ? ""
-              : "solid 2px #EF5050",
+              : isValidThree,
         }}
       />
     </div>

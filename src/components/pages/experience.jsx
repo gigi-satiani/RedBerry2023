@@ -3,10 +3,13 @@ import { AddExperience } from "../exp&eduComponents/addExperience";
 import "../cssFiles/main.css";
 
 export const Experience = () => {
-  const [addInfo, setAddInfo] = useState(0);
+  const [addExperience, setAddExperience] = useState([]);
 
   function handleAddInfo() {
-    setAddInfo(addInfo + 1);
+    setAddExperience([
+      ...addExperience,
+      <AddExperience key={addExperience.length} />,
+    ]);
   }
 
   return (
@@ -15,9 +18,7 @@ export const Experience = () => {
         <div className="pageInfoTwoExp">
           <div className="addExpBtnParent">
             <AddExperience />
-            {[...Array(addInfo)].map((_, index) => (
-              <AddExperience key={index} />
-            ))}
+            {addExperience}
           </div>
           <button
             type="button"

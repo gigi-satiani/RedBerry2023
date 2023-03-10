@@ -3,19 +3,20 @@ import { AddEducation } from "../exp&eduComponents/addEducation";
 import "../cssFiles/main.css";
 
 export const Education = () => {
-  const [addEdu, setAddEdu] = useState(0);
+  const [addEducation, setAddEducation] = useState([]);
 
   function handleAddEdu() {
-    setAddEdu(addEdu + 1);
+    setAddEducation([
+      ...addEducation,
+      <AddEducation key={addEducation.length} />,
+    ]);
   }
   return (
     <div className="mainEduPage">
       <div className="udecationParent">
         <div className="pageInfoTwo">
           <AddEducation />
-          {[...Array(addEdu)].map((_, index) => (
-            <AddEducation key={index} />
-          ))}
+          {addEducation}
         </div>
         <div className="addEduBtnParent">
           <button

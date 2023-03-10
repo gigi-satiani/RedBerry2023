@@ -6,7 +6,7 @@ export const PrivateInformation = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLasttName] = useState("");
   const [email, setEmail] = useState("");
-  const [borderColor, setBorderColor] = useState("#bcbcbc");
+  const [borderColor, setBorderColor] = useState("");
   const [textValue, setTextValue] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -22,7 +22,6 @@ export const PrivateInformation = (props) => {
   };
 
   const isValidOne = firstName === "" || regex.test(firstName);
-  console.log(regex.test(firstName), "firstname");
   const isValidTwo = lastName === "" || regexTwo.test(lastName);
 
   // mail input validation
@@ -30,9 +29,11 @@ export const PrivateInformation = (props) => {
     const emailAddress = event.target.value;
 
     if (!validateEmail(emailAddress)) {
-      setBorderColor("#EF5050");
+      setBorderColor("red");
+    } else if (emailAddress) {
+      setBorderColor("green");
     } else {
-      setBorderColor("#98E37E");
+      setBorderColor("gray");
     }
   };
 
@@ -118,9 +119,7 @@ export const PrivateInformation = (props) => {
               outline:
                 isValidThree && textValue.length >= 1
                   ? "solid 2px #98E37E"
-                  : isValidThree
-                  ? ""
-                  : "solid 2px #EF5050",
+                  : isValidThree,
             }}
           />
 
@@ -144,11 +143,12 @@ export const PrivateInformation = (props) => {
             type="number"
             onKeyUp={validateNumber}
             style={{
-              outline: isValidNumber
-                ? "solid 2px #98E37E"
-                : isValidNumber
-                ? ""
-                : "solid 2px #EF5050",
+              outline:
+                isValidNumber && phoneNumber.length > 1
+                  ? "solid 2px #98E37E"
+                  : isValidNumber
+                  ? ""
+                  : "solid 2px #EF5050",
             }}
           />
         </div>
