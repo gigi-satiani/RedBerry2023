@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GlobalInput } from "../globals/globalInput";
 import { GlobalTextArea } from "../globals/globalTextArea";
 
@@ -24,25 +24,66 @@ export const PrivateInformation = (props) => {
   const isValidOne = firstName === "" || regex.test(firstName);
   const isValidTwo = lastName === "" || regexTwo.test(lastName);
 
+  useEffect(() => {
+    const inputImageGood = document.getElementById("goodImg");
+    const inputImageBad = document.getElementById("badImg");
+
+    if (isValidOne && firstName.length >= 2) {
+      inputImageGood.style.display = "block";
+      inputImageBad.style.display = "none";
+    } else if (firstName === "") {
+      inputImageGood.style.display = "none";
+      inputImageBad.style.display = "none";
+    } else if (!isValidOne) {
+      inputImageGood.style.display = "none";
+      inputImageBad.style.display = "block";
+    }
+  }, [firstName]);
+
+  useEffect(() => {
+    const inputImageGood1 = document.querySelectorAll("#goodImg")[1];
+    const inputImageBad1 = document.querySelectorAll("#badImg")[1];
+
+    if (isValidTwo && lastName.length >= 2) {
+      inputImageGood1.style.display = "block";
+      inputImageBad1.style.display = "none";
+    } else if (lastName === "") {
+      inputImageGood1.style.display = "none";
+      inputImageBad1.style.display = "none";
+    } else if (!isValidTwo) {
+      inputImageGood1.style.display = "none";
+      inputImageBad1.style.display = "block";
+    }
+  }, [lastName]);
+
   // mail input validation
   const handleMailBlur = (event) => {
-    const emailAddress = event.target.value;
+    setEmail(event.target.value);
 
-    if (!validateEmail(emailAddress)) {
-      setBorderColor("red");
-    } else if (emailAddress) {
-      setBorderColor("green");
+    if (email.length === 0) {
+      setBorderColor("1px solid #bcbcbc");
+    } else if (!email.endsWith("@redberry.ge")) {
+      setBorderColor("2px solid #EF5050");
     } else {
-      setBorderColor("gray");
+      setBorderColor("2px solid #98E37E");
     }
   };
 
-  const validateEmail = (email) => {
-    if (email.endsWith("@redberry.ge")) {
-      return true;
+  useEffect(() => {
+    const inputImageGood2 = document.querySelectorAll("#goodImg")[2];
+    const inputImageBad2 = document.querySelectorAll("#badImg")[2];
+
+    if (email.length === 0) {
+      inputImageGood2.style.display = "none";
+      inputImageBad2.style.display = "none";
+    } else if (!email.endsWith("@redberry.ge")) {
+      inputImageGood2.style.display = "none";
+      inputImageBad2.style.display = "block";
+    } else {
+      inputImageGood2.style.display = "block";
+      inputImageBad2.style.display = "none";
     }
-    return false;
-  };
+  }, [email]);
 
   // phone input validation
   const regexPhoneNumber = /^(\+?995)(79\d{7}|5\d{8})$/;
@@ -52,6 +93,22 @@ export const PrivateInformation = (props) => {
 
   const isValidNumber =
     phoneNumber === "" || regexPhoneNumber.test(phoneNumber);
+
+  useEffect(() => {
+    const inputImageGood3 = document.querySelectorAll("#goodImg")[3];
+    const inputImageBad3 = document.querySelectorAll("#badImg")[3];
+
+    if (isValidNumber && phoneNumber.length > 1) {
+      inputImageGood3.style.display = "block";
+      inputImageBad3.style.display = "none";
+    } else if (phoneNumber === "") {
+      inputImageGood3.style.display = "none";
+      inputImageBad3.style.display = "none";
+    } else {
+      inputImageGood3.style.display = "none";
+      inputImageBad3.style.display = "block";
+    }
+  }, [phoneNumber]);
 
   // text area validation
   const regexText = /^[a-zA-Z0-9-^ა-ჰ]{0,}$/;
@@ -84,7 +141,7 @@ export const PrivateInformation = (props) => {
             label="გვარი"
             span="მინიმუმ 2 ასო, ქართული ასოები"
             onKeyUp={handleKeyUpTwo}
-            firstName={props.firstName}
+            lastName={props.lastName}
             style={{
               outline:
                 isValidTwo && lastName.length >= 2
@@ -129,7 +186,7 @@ export const PrivateInformation = (props) => {
             span="უნდა მთავრდებოდეს @redberry.ge-ით"
             color="blue"
             type="email"
-            style={{ borderColor: borderColor }}
+            style={{ outline: borderColor }}
             value={email}
             onBlur={handleMailBlur}
             onKeyUp={(e) => setEmail(e.target.value)}

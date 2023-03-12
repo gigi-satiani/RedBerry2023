@@ -16,7 +16,24 @@ export const AddEducation = (props) => {
     setTextValue(event.target.value);
   };
 
-  const isValidOne = educationValue === "" || regex.test(educationValue);
+  useEffect(() => {
+    const acceptImage1 = document.getElementById("goodImg");
+    const diclineImage1 = document.getElementById("badImg");
+
+    if (isValidOner && educationValue.length >= 2) {
+      acceptImage1.style.display = "block";
+      diclineImage1.style.display = "none";
+    } else if (educationValue === "") {
+      acceptImage1.style.display = "none";
+      diclineImage1.style.display = "none";
+    } else if (!isValidOner) {
+      acceptImage1.style.display = "none";
+      diclineImage1.style.display = "block";
+    }
+  }, [educationValue]);
+
+  const isValidOner = educationValue === "" || regex.test(educationValue);
+  console.log(educationValue, "education");
   const isValidTwo = textValue === "" || regexText.test(textValue);
 
   useEffect(() => {
@@ -37,9 +54,9 @@ export const AddEducation = (props) => {
         firstName={props.firstName}
         style={{
           outline:
-            isValidOne && educationValue.length >= 2
+            isValidOner && educationValue.length >= 2
               ? "solid 2px #98E37E"
-              : isValidOne
+              : isValidOner
               ? ""
               : "solid 2px #EF5050",
         }}

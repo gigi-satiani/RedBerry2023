@@ -1,23 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GlobalInput } from "../globals/globalInput";
 import { GlobalTextArea } from "../globals/globalTextArea";
 
 export const AddExperience = (props) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLasttName] = useState("");
+  const [workPosition, setWorkPosition] = useState("");
+  const [employer, setEmployer] = useState("");
   const [textValue, setTextValue] = useState("");
 
+  // position & employer
   let regex = /^[a-zA-Z0-9-^ა-ჰ]{2,}$/;
 
-  const handleBlur = (event) => {
-    setFirstName(event.target.value);
+  const handlePosition = (event) => {
+    setWorkPosition(event.target.value);
   };
-  const handleBlurr = (event) => {
-    setLasttName(event.target.value);
+  const handlEmployer = (event) => {
+    setEmployer(event.target.value);
   };
 
-  const isValidOne = firstName === "" || regex.test(firstName);
-  const isValidTwo = lastName === "" || regex.test(lastName);
+  const isValidOne = workPosition === "" || regex.test(workPosition);
+  const isValidTwo = employer === "" || regex.test(employer);
+
+  useEffect(() => {
+    const acceptImage = document.getElementById("goodImg");
+    const diclineImage = document.getElementById("badImg");
+
+    if (isValidOne && workPosition.length >= 2) {
+      acceptImage.style.display = "block";
+      diclineImage.style.display = "none";
+    } else if (workPosition === "") {
+      acceptImage.style.display = "none";
+      diclineImage.style.display = "none";
+    } else if (!isValidOne) {
+      acceptImage.style.display = "none";
+      diclineImage.style.display = "block";
+    }
+  }, [workPosition]);
+
+  useEffect(() => {
+    const acceptImage1 = document.querySelectorAll("#goodImg")[1];
+    const diclineImage1 = document.querySelectorAll("#badImg")[1];
+
+    if (isValidTwo && employer.length >= 2) {
+      acceptImage1.style.display = "block";
+      diclineImage1.style.display = "none";
+    } else if (employer === "") {
+      acceptImage1.style.display = "none";
+      diclineImage1.style.display = "none";
+    } else if (!isValidTwo) {
+      acceptImage1.style.display = "none";
+      diclineImage1.style.display = "block";
+    }
+  }, [employer]);
 
   // text area regex
   const regexText = /^[a-zA-Z0-9-^ა-ჰ]{0,}$/;
@@ -32,11 +65,11 @@ export const AddExperience = (props) => {
         placeholder="დეველოპერი, დიზაინერი, ა.შ"
         label="თანამდებობა"
         span="მინიმუმ 2 სიმბოლო"
-        onKeyUp={handleBlur}
-        firstName={props.firstName}
+        onKeyUp={handlePosition}
+        workPosition={props.workPosition}
         style={{
           outline:
-            isValidOne && firstName.length >= 2
+            isValidOne && workPosition.length >= 2
               ? "solid 2px #98E37E"
               : isValidOne
               ? ""
@@ -47,11 +80,11 @@ export const AddExperience = (props) => {
         placeholder="დამსაქმებელი"
         label="დამსაქმებელი"
         span="მინიმუმ 2 სიმბოლო"
-        lastName={props.lastName}
-        onKeyUp={handleBlurr}
+        employer={props.employer}
+        onKeyUp={handlEmployer}
         style={{
           outline:
-            isValidTwo && lastName.length >= 2
+            isValidTwo && employer.length >= 2
               ? "solid 2px #98E37E"
               : isValidTwo
               ? ""
@@ -67,7 +100,7 @@ export const AddExperience = (props) => {
         placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
         className="workplaceInfo"
         onKeyUp={handleBlurer}
-        firstName={props.firstName}
+        workPosition={props.workPosition}
         style={{
           outline:
             isValidThree && textValue.length >= 1

@@ -1,7 +1,6 @@
 .inputParentDiv {
   display: flex;
-  position: relative;
-  width: 100%;
+  width: 99.5%;
 }
 .inputErrorFigure {
   display: flex;
@@ -16,7 +15,7 @@
   display: none;
 }
 .inputDiclined {
-  left: 10px;
-  display: none;
   position: absolute;
+  left: -30px;
+  display: none;
 }
