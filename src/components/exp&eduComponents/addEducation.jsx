@@ -16,6 +16,9 @@ export const AddEducation = (props) => {
     setTextValue(event.target.value);
   };
 
+  const isValidOner = educationValue === "" || regex.test(educationValue);
+  const isValidTwo = textValue === "" || regexText.test(textValue);
+
   useEffect(() => {
     const acceptImage1 = document.getElementById("goodImg");
     const diclineImage1 = document.getElementById("badImg");
@@ -30,11 +33,7 @@ export const AddEducation = (props) => {
       acceptImage1.style.display = "none";
       diclineImage1.style.display = "block";
     }
-  }, [educationValue]);
-
-  const isValidOner = educationValue === "" || regex.test(educationValue);
-  console.log(educationValue, "education");
-  const isValidTwo = textValue === "" || regexText.test(textValue);
+  }, [isValidOner]);
 
   useEffect(() => {
     fetch("https://resume.redberryinternship.ge/api/degrees")

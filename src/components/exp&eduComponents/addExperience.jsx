@@ -34,7 +34,7 @@ export const AddExperience = (props) => {
       acceptImage.style.display = "none";
       diclineImage.style.display = "block";
     }
-  }, [workPosition]);
+  }, [isValidOne]);
 
   useEffect(() => {
     const acceptImage1 = document.querySelectorAll("#goodImg")[1];
@@ -50,7 +50,7 @@ export const AddExperience = (props) => {
       acceptImage1.style.display = "none";
       diclineImage1.style.display = "block";
     }
-  }, [employer]);
+  }, [isValidTwo]);
 
   // text area regex
   const regexText = /^[a-zA-Z0-9-^ა-ჰ]{0,}$/;
