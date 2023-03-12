@@ -38,7 +38,7 @@ export const PrivateInformation = (props) => {
       inputImageGood.style.display = "none";
       inputImageBad.style.display = "block";
     }
-  }, [isValidOne]);
+  }, [isValidOne, firstName]);
 
   useEffect(() => {
     const inputImageGood1 = document.querySelectorAll("#goodImg")[1];
@@ -54,7 +54,7 @@ export const PrivateInformation = (props) => {
       inputImageGood1.style.display = "none";
       inputImageBad1.style.display = "block";
     }
-  }, [isValidTwo]);
+  }, [isValidTwo, lastName]);
 
   // mail input validation
   const handleMailBlur = (event) => {
@@ -108,7 +108,7 @@ export const PrivateInformation = (props) => {
       inputImageGood3.style.display = "none";
       inputImageBad3.style.display = "block";
     }
-  }, [isValidNumber]);
+  }, [isValidNumber, phoneNumber]);
 
   // text area validation
   const regexText = /^[a-zA-Z0-9-^ა-ჰ]{0,}$/;

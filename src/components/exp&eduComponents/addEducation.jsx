@@ -33,7 +33,7 @@ export const AddEducation = (props) => {
       acceptImage1.style.display = "none";
       diclineImage1.style.display = "block";
     }
-  }, [isValidOner]);
+  }, [isValidOner, educationValue]);
 
   useEffect(() => {
     fetch("https://resume.redberryinternship.ge/api/degrees")
@@ -49,7 +49,7 @@ export const AddEducation = (props) => {
         placeholder="სასწავლებელი"
         label="სასწავლებელი"
         span="მინიმუმ 2 სიმბოლო"
-        onKeyUp={handleBlur}
+        onChange={handleBlur}
         firstName={props.firstName}
         style={{
           outline:
@@ -87,7 +87,7 @@ export const AddEducation = (props) => {
         label="აღწერა"
         placeholder="განათლების აღწერა"
         className="workplaceInfo"
-        onKeyUp={handleBlurer}
+        onChange={handleBlurer}
         firstName={props.firstName}
         style={{
           outline:
