@@ -20,6 +20,7 @@ export const Experience = () => {
             <AddExperience />
             {addExperience}
           </div>
+
           <button
             type="button"
             className="addInfoButton"
