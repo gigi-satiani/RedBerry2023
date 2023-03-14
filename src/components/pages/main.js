@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MyHeader } from "../globals/header";
 import { PrivateInformation } from "./privateInformation";
-import { Experience } from "./Experience";
-import { Education } from "./Education";
+import { Experience } from "./experience";
+import { Education } from "./education";
 import { TotalInfoPart } from "../globals/totalInfoComponent";
 import "../cssFiles/main.css";
 
