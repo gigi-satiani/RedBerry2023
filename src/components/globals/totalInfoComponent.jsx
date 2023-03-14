@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../images/LOGO.png";
 import "../cssFiles/home.css";
 
 export const TotalInfoPart = () => {
