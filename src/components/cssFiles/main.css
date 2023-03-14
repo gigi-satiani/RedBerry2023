@@ -41,7 +41,7 @@
 /* info page - name & surname */
 
 .infoParentMain {
-  width: 60%;
+  width: 100%;
   display: flex;
   align-items: center;
   background-color: #f6eded;
@@ -65,7 +65,7 @@
 
 .pageInfo {
   display: flex;
-  width: 90%;
+  width: 75%;
   height: 100%;
   text-align: left;
   color: #1a1a1a;
@@ -83,6 +83,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  padding-right: 30px;
 }
 .resetParent {
   position: relative;
@@ -99,7 +100,7 @@
 
 .header {
   display: flex;
-  width: 82%;
+  width: 70%;
   height: 50px;
   padding-top: 25px;
   text-align: center;
@@ -265,8 +266,8 @@
 }
 
 .btnParent {
-  width: 81%;
-  margin-right: 15px;
+  width: 70%;
+  margin-right: 30px;
 }
 
 .btnParentTwo {
@@ -442,6 +443,7 @@
   color: #1a1a1a;
   padding: 0 0 0 40px;
 }
+
 .addExpBtnParent {
   margin: 20px 0 0 0;
   overflow: auto;

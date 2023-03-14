@@ -1,15 +1,15 @@
 import React from "react";
+import logo from "../../images/LOGO.png";
+import "../cssFiles/home.css";
 
-export const TotalInfoPart = (props) => {
+export const TotalInfoPart = () => {
   return (
-    <div className="parentDiv">
-      <div className="liveAboutParent">
-        <h4 className="liveAboutHeading">{props.h4}</h4>
-        <div className="dateAndJobFlex">
-          <label className="jobDiscription">{props.label}</label>
-          <span className="dateAndTime">{props.span}</span>
-        </div>
-        <p className="liveAbout">{props.p}</p>
+    <div className="endParentDiv">
+      <div className="logoBerryParent"></div>
+      <div className="profileBtnParent">
+        <button className="newProfileBtn" to="formRegistration">
+          გმადლობთ მონაწილეობისათვის
+        </button>
       </div>
     </div>
   );
