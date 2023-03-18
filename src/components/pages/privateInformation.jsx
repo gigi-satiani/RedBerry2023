@@ -122,7 +122,7 @@ export const PrivateInformation = (props) => {
       <div className="infoParent">
         <div className="infoInputParent">
           <GlobalInput
-            placeholder="გიგი"
+            placeholder="name"
             label="სახელი"
             span="მინიმუმ 2 ასო, ქართული ასოები"
             onKeyUp={handleKeyUpOne}
@@ -137,7 +137,7 @@ export const PrivateInformation = (props) => {
             }}
           />
           <GlobalInput
-            placeholder="ასათიანი"
+            placeholder="surname"
             label="გვარი"
             span="მინიმუმ 2 ასო, ქართული ასოები"
             onKeyUp={handleKeyUpTwo}
@@ -160,7 +160,7 @@ export const PrivateInformation = (props) => {
               type="file"
               id="fileInput"
               className="uploadPhotoInput"
-              placeholder="awdads"
+              placeholder=""
             />
             <label htmlFor="fileInput" id="fileLabel" accept="image/*">
               ატვირთვა
@@ -168,7 +168,7 @@ export const PrivateInformation = (props) => {
           </div>
           <GlobalTextArea
             label="ჩემ შესახებ (არასავალდებულო)"
-            placeholder="ზოგადი ინფო შენ შესახებ"
+            placeholder="ზოგადი ინფო შენს შესახებ"
             type="text"
             className="aboutMeText"
             onKeyUp={handleBlurer}
@@ -181,7 +181,7 @@ export const PrivateInformation = (props) => {
           />
 
           <GlobalInput
-            placeholder="GigiAsatiani@redberry.ge"
+            placeholder="e.g john@redberry.ge"
             label="ელ.ფოსტა"
             span="უნდა მთავრდებოდეს @redberry.ge-ით"
             color="blue"
@@ -193,7 +193,7 @@ export const PrivateInformation = (props) => {
           />
 
           <GlobalInput
-            placeholder="+995 598 88 68 00"
+            placeholder="+995 xxx xx xx xx"
             label="მობილურის ნომერი"
             span="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
             color="blue"
